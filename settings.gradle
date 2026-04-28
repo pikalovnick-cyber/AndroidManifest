@@ -17,3 +17,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "App"
 include(":app")
+gradle.settingsEvaluated {
+    configurations.configureEach {
+        resolutionStrategy {
+            failOnVersionConflict()
+        }
+    }
+}
