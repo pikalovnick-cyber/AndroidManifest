@@ -1,3 +1,22 @@
+package com.turbo.app
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.runtime.*
+import androidx.compose.material3.*
+import kotlinx.coroutines.delay
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContent {
+            App()
+        }
+    }
+}
+
 @Composable
 fun App() {
 
@@ -28,11 +47,12 @@ fun App() {
             fps = (30..60).random()
             temp = (35..45).random().toFloat()
 
-            kotlinx.coroutines.delay(1500)
+            delay(1500)
         }
     }
 
     MaterialTheme {
+
         Surface {
 
             Text("🎮 AI TURBO ENGINE")
@@ -42,6 +62,9 @@ fun App() {
         }
     }
 }
+
+/* ===================== AI ENGINE ===================== */
+
 data class Metrics(
     val fps: Int,
     val temp: Float,
@@ -68,7 +91,7 @@ class AdaptiveAI {
 class PerformanceEngine {
 
     fun apply(mode: String) {
-        // здесь будет логика boost’а
+        // сюда позже подключим real boost / overlay logic
     }
 }
 
