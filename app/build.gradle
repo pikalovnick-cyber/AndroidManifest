@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.plugin.compose'
 }
-
 android {
     namespace 'com.turbo.app'
     compileSdk 34
@@ -18,6 +17,10 @@ android {
 
     buildFeatures {
         compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.14'
     }
 
     compileOptions {
