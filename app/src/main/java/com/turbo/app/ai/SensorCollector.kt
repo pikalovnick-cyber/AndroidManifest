@@ -2,17 +2,19 @@ package com.turbo.app.ai
 
 import android.content.Context
 import android.app.ActivityManager
+import java.io.File
 
 class SensorCollector(private val context: Context) {
 
     fun getFps(): Int {
-        return OverlayState.fps // из твоего FPS overlay
+        // пока безопасная заглушка
+        return 60
     }
 
     fun getTemp(): Float {
         return try {
             val file = "/sys/class/thermal/thermal_zone0/temp"
-            File(file).readText().toFloat() / 1000f
+            File(file).readText().trim().toFloat() / 1000f
         } catch (e: Exception) {
             35f
         }
